@@ -4,11 +4,11 @@ services:
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=ny_cabs
+      - POSTGRES_DB=ny_taxi
     volumes:
-      - "new_volume_local:/var/lib/postgresql/data:rw"
+      - "dollop_volume:/var/lib/postgresql/data:rw"
     ports:
-      - "5431:5432"
+      - "5432:5432"
     networks:
       - pg-network      
   pgadmin:
@@ -25,6 +25,6 @@ networks:
     name: pg-network
     external: true  
 volumes:
-  new_volume_local:
+  dollop_volume:
     external: true    
   
